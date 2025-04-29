@@ -1,0 +1,258 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #8c53ff;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 10px 15px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    width: 80%;
+    height: 600px;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    overflow-y: scroll;
+    /*position: relative;*/
+}
+
+.addNote-container{
+    color: #626CD6;
+    font-weight: 500;
+    margin-top: 20px;
+    background-color: #eee;
+    border: none;
+    padding: 20px;
+    border-radius: 8px;
+    height: 200px;
+    width: 200px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.addNote-container:hover{
+    background-color: #f1f1f1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.addNote-container .icon {
+    height: 78px;
+    width: 78px;
+    color: #626CD6;
+    font-size: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed #626CD6;
+}
+.addNote-container p{
+    padding-top: 20px;
+    font-size: 22px;
+    font-weight: 500;
+
+}
+#popupContainer{
+    width: 300px;
+    height: 400px;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 8px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    display: flex;
+    
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    /*display: none;*/
+}
+#popupContainer .header{
+width: 100%;
+height: 50px;
+display: flex;
+align-items:center;
+justify-content: space-between;
+}
+#popupContainer .header i {
+    color: #8b8989;
+    cursor: pointer;
+    font-size: 23px;
+    cursor: pointer;
+  }
+
+#popupContainer .header p{
+    font-size: 18px;
+    font-weight: 500;
+}
+#popupContainer .titel, .description{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+#popupContainer .titel label{
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+#popupContainer .titel input{
+    height: 50px;
+    width: 100%;
+    outline: none;
+    font-size: 17px;
+    padding: 0 15px;
+    border-radius: 4px;
+    border: 1px solid #999;
+  
+}
+#popupContainer .description label{
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+#popupContainer .description textarea{
+    height: 150px;
+    resize: none;
+    padding: 8px 15px;
+    width: 100%;
+    outline: none;
+    font-size: 17px;
+    padding: 0 15px;
+    border-radius: 4px;
+    border: 1px solid #999;
+   
+}
+#popupContainer button {
+    width: 100%;
+    height: 50px;
+    color: #fff;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 17px;
+    border-radius: 4px;
+    background: #626CD6;
+    margin-top: 8px;
+  }
+  #list-container {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+}
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+li {
+  background-color: #fff385;
+  margin: 5px 0;
+  padding: 20px;
+  border-radius: 8px; /* Rounded corners */
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* Added to align buttons to the right */
+  height: 200px;
+  width: 200px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow:  9px 9px 18px #b3b3b3,
+           -9px -9px 18px #ffffff;
+}
+
+li span {
+  font-size: 12px;
+  flex-grow: 1;
+  word-wrap: break-word;
+  overflow-y: scroll;
+}
+#editBtn,
+#deleteBtn {
+    background-color: #c6aaff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    margin: 0 5px; /* Adjusted margin for spacing */
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 12px;
+    width: 60px;
+}
+
+#editBtn {
+    background-color: gainsboro;
+}
+
+#deleteBtn:hover {
+    background-color: #8c53ff;
+}
+
+#editBtn:hover {
+    background-color: gray;
+}
+#editing-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 300px;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+#submitBtn, #closeBtn {
+  width: 100px;
+  background-color: #8c53ff;
+  color: #fff;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+#closeBtn {
+  background-color: gainsboro;
+}
+#note-titel{
+  margin-bottom: 10px;
+}
